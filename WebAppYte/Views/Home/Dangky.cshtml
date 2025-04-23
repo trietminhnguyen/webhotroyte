@@ -1,0 +1,286 @@
+﻿@*@model WebAppYte.Models.NguoiDung
+
+    @{
+        ViewBag.Title = "Dangky";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Đăng ký tài khoản</h2>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.HoTen, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DienThoai, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DienThoai, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DienThoai, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TaiKhoan, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IDGioiTinh, "Giới tính", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("IDGioiTinh", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IDGioiTinh, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IDTinh, "Tỉnh", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("IDTinh", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IDTinh, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Đăng ký" class="btn btn-danger" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Trang chủ", "Index")
+    </div>*@
+
+@model WebAppYte.Models.NguoiDung
+
+@{
+    ViewBag.Title = "Đăng ký tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #e9f0f7;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .full-page-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .form-wrapper {
+        width: 100%;
+        max-width: 600px;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .form-header {
+        background: linear-gradient(135deg, #007bff, #339af0);
+        color: #fff;
+        padding: 25px;
+        text-align: center;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .form-header h3 {
+        margin: 0;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .form-body {
+        padding: 35px 30px 20px 30px;
+    }
+
+    .mb-3 {
+        text-align: center; /* Căn giữa nội dung trong mỗi group */
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        font-weight: 600;
+        display: block;
+        text-align: center; /* Căn giữa label */
+        margin-bottom: 8px;
+    }
+
+    .form-control,
+    .form-select {
+        display: inline-block;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 1rem;
+        border: 1px solid #ced4da;
+        transition: border-color 0.3s;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #339af0;
+        outline: none;
+        box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+    }
+
+    .form-control::placeholder {
+        font-style: italic;
+        color: #adb5bd;
+    }
+
+    .text-danger {
+        font-size: 0.9rem;
+        margin-top: 5px;
+        display: block;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        font-weight: 600;
+        border-radius: 10px;
+        padding: 10px 30px;
+    }
+
+    .btn-primary:hover {
+        background-color: #0069d9;
+    }
+
+    .form-footer {
+        padding: 20px;
+        background-color: #f1f3f5;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        text-align: center;
+    }
+
+    .form-footer .btn-outline-secondary {
+        border-radius: 10px;
+        font-weight: 500;
+    }
+
+    @@media (max-width: 576px) {
+        .form-body {
+            padding: 25px 20px;
+        }
+
+        .form-header h3 {
+            font-size: 1.25rem;
+        }
+
+        .btn-primary {
+            width: 100%;
+        }
+    }
+</style>
+
+
+<div class="full-page-container">
+    <div class="form-wrapper">
+        <div class="form-header">
+            <h3>Đăng ký tài khoản</h3>
+        </div>
+        <div class="form-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger mb-3" })
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.HoTen, new { @class = "form-label fw-semibold" })
+                    @Html.EditorFor(m => m.HoTen, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập họ và tên" } })
+                    @Html.ValidationMessageFor(m => m.HoTen, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Email, new { @class = "form-label fw-semibold" })
+                    @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập email" } })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.DienThoai, new { @class = "form-label fw-semibold" })
+                    @Html.EditorFor(m => m.DienThoai, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập số điện thoại" } })
+                    @Html.ValidationMessageFor(m => m.DienThoai, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.TaiKhoan, new { @class = "form-label fw-semibold" })
+                    @Html.EditorFor(m => m.TaiKhoan, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập tên tài khoản" } })
+                    @Html.ValidationMessageFor(m => m.TaiKhoan, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.MatKhau, new { @class = "form-label fw-semibold" })
+                    @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control", placeholder = "Nhập mật khẩu" })
+                    @Html.ValidationMessageFor(m => m.MatKhau, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.IDGioiTinh, "Giới tính", htmlAttributes: new { @class = "form-label fw-semibold" })
+                    @Html.DropDownList("IDGioiTinh", null, "Chọn giới tính", new { @class = "form-select" })
+                    @Html.ValidationMessageFor(m => m.IDGioiTinh, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.IDTinh, "Tỉnh", htmlAttributes: new { @class = "form-label fw-semibold" })
+                    @Html.DropDownList("IDTinh", null, "Chọn tỉnh", new { @class = "form-select" })
+                    @Html.ValidationMessageFor(m => m.IDTinh, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg px-5">Đăng ký</button>
+                </div>
+            }
+        </div>
+        <div class="form-footer">
+            @Html.ActionLink("Quay lại trang chủ", "Index", null, new { @class = "btn btn-outline-secondary" })
+        </div>
+    </div>
+</div>
+
+
+
