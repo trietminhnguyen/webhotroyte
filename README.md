@@ -1,6 +1,6 @@
-Đồ án chuyên ngành công nghệ phần mềm
-GVHD: Th.s Nguyễn Tất Phú Cường 
-Nhóm sinh viên thực hiện:     
+ Đồ án chuyên ngành công nghệ phần mềm
+ GVHD: Th.s Nguyễn Tất Phú Cường 
+ Nhóm sinh viên thực hiện:     
 + Nguyễn Trần Minh Triết  MSSV: 2151220040
 + Huỳnh Ngọc Tín          MSSV: 2151220003     
 
@@ -16,6 +16,7 @@ Muốn gửi câu hỏi mới phải đăng nhập tài khoản.
 trung tâm, bệnh viện. Bấm xem chi tiết sẽ hiển thị chi tiết.
 + có thể đăng kí và đăng nhập
 
+
 - Người dùng đã đăng nhập : 
 + Xem hồ sơ, cập nhật hồ sơ, xem lịch sử tư vấn.
 + Có thể gửi câu hỏi mới, trò chuyện với bác sĩ, xem câu hỏi.
@@ -28,6 +29,7 @@ Nhấp vào link zoom để vào trò chuyện với bác sĩ.
 Khi tư vấn xong, sẽ có trạng thái đã tư vấn xong. Bác sĩ sẽ có kết luận, giải đáp về cuộc trò chuyện.
 Tối đa 40 phút 1 cuộc tư vấn.Khi tư vấn kết thúc sớm bác sĩ nhập thời gian kết thúc tư vấn
 
+
 - Bác sĩ : 
 + Được cấp tài khoản bởi người quản trị:
 Đăng nhập thành công sẽ có danh mục : Trả lời câu hỏi và Danh sách lịch hẹn.
@@ -37,6 +39,7 @@ Tối đa 40 phút 1 cuộc tư vấn.Khi tư vấn kết thúc sớm bác sĩ n
 + Xử lí khi có nhiều lịch trùng : Sẽ từ chối, đổi lịch cho bệnh nhân khung giờ khác và thông báo đến cho bệnh nhân.
 + Khi sắp đến giờ tư vấn sẽ có nhân viên trung tâm lên lạc số điện thoại và email của người dùng để thông báo lịch hẹn.
 
+
 - Người quản trị : 
 +quản lý người dùng 
 + Quản lý chung toàn bộ hệ thống.
@@ -44,6 +47,7 @@ Tối đa 40 phút 1 cuộc tư vấn.Khi tư vấn kết thúc sớm bác sĩ n
 +Thêm mới,cập nhật và xóa  bác sĩ và  trung tâm y tế.
 
 
-Admin: TK: trietAd , Mk: 123 
-Bacsy: TK: BacsyCuong , Mk: 123456
-User: Tk: minh triet, Mk: 1
+
+ Admin: TK: trietAd , Mk: 123 
+ Bacsy: TK: BacsyCuong , Mk: 123456
+ User: Tk: minh triet, Mk: 1
