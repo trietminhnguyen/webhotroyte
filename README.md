@@ -1,5 +1,5 @@
 - Đồ án chuyên ngành công nghệ phần mềm
-- GVHD: Th.s Nguyễn Tất Phú Cường 
+- GVHD: Ths Nguyễn Tất Phú Cường 
 - Nhóm sinh viên thực hiện:     
  + Nguyễn Trần Minh Triết  MSSV: 2151220040
  + Huỳnh Ngọc Tín          MSSV: 2151220003     
@@ -8,7 +8,7 @@ Mô tả hoạt động website hỗ trợ y tế từ xa
 
 
 - Người dùng là khách ( chưa đăng nhập ) : 
- + Có thể xem số liệu covid, tin tức covid về cách phòng tránh, tin mới
+ +Có thể xem số liệu covid, tin tức covid về cách phòng tránh, tin mới
 tin tức được cập nhật hàng ngày bởi quản trị viên.
  + Xem các câu hỏi và câu trả lời của những người dùng đã hỏi và bác sĩ đã trả lời.
 Muốn gửi câu hỏi mới phải đăng nhập tài khoản.
